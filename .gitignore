@@ -1,0 +1,7 @@
+venv/
+data/
+saved/checkpoints/
+saved/logs/
+saved/figures/
+.idea/
+**/__pycache__

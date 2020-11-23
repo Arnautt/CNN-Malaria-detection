@@ -1,0 +1,49 @@
+# Data loader parameters
+dataloader:                                   #
+  data_path: ./data                           # Path where images are
+  batch_size: 128                             # Batch size for each data loader
+  test_proportion: 0.05                       # Proportion of the images to keep for the test set
+  valid_proportion: 0.1                       # Proportion of the images to keep for the validation set
+  im_size: 224                                # Squared image size
+  prob_hflip: 0.5                             # Probability to do horizontal flip (data augmentation)
+  rotation_degree: 180                        # Maximal rotation degree for data augmentation
+
+
+# Model parameters to train from scratch
+model:                                        # Model architecture
+  block:                                      # Convolution block architecture
+    kernel_size: 2                            # Kernel size for convolution
+    stride: 2                                 # Stride for convolution
+    probs_dropout: 0.15                       # Probability of dropout
+  n_out_channels: [3, 10, 15]                 # Number of output channels for convolution blocks. First needs to be 3.
+  n_hidden_neurons: [512, 256]                # Number of hidden neurons for each layer of the classifier part
+
+
+# Optimizer hyper-parameters
+params_optim:                                 #
+  lr: 0.001                                   # Optimizer learning rate
+  momentum: 0.9                               # Optimizer momentum
+
+
+# Learning rate scheduler hyper-parameters
+params_lr_scheduler:                          # Set it to None if you dont' want a learning rate scheduler
+  step_size: 4                                # Decays learning rate every step_size
+  gamma: 0.1                                  # Decays LR by gamma
+
+
+# Trainer class parameters
+trainer:                                      #
+  threshold: 0.5                              # Threshold to convert probability to label
+  save_checkpoint_path: ./saved/checkpoints   # Path where we save checkpoints
+  verbose_freq: 2                             # Frequence to show validation metrics in the training phase
+  save_log_path: ./saved/logs                 # Path where we save TensorBoard logs
+
+
+# Training
+train:                                        #
+  n_iter: 15                                  # Number of iterations to train models
+
+
+# General configuration of model
+use_pretrained_model: True                    # If you want to use a pre-trained model or not
+model_name: resnet                            # If you want to use a pre-trained model, chose its architecture name (cf. Readme)
