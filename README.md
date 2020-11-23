@@ -43,7 +43,7 @@ Moreover, we explain each prediction using SHAP values ([Lundberg *et al.*, 2017
 │   ├── explainer.py                # SHAP explainer class
 │   ├── __init__.py                 # Make visualization a Python package
 │   └── logger.py                   # TensorBoard logger
-├── config.yaml                  # Configuration files (paths, hyper-parameters, ...)
+├── config.yaml                  # Configuration file (paths, hyper-parameters, ...)
 ├── main.py                      # Main file to train a model and explain it 
 ├── Makefile                     # Makefile with commands like make data or make train
 ├── README.md                    # Readme doc
