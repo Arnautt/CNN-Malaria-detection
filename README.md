@@ -5,7 +5,7 @@
 This project aims at detecting parasitized (vs un-parasitized) cell images for the Malaria disease.
 In order to do so, we use a custom implemented Convolutional Neural Network and some pre-trained models
 (ResNet, VGG, AlexNet etc...).
-Moreover, we explain each predictions using SHAP values ([Lundberg *et al.*, 2017](https://arxiv.org/pdf/1705.07874.pdf)).
+Moreover, we explain each prediction using SHAP values ([Lundberg *et al.*, 2017](https://arxiv.org/pdf/1705.07874.pdf)).
 
 
 ## Project structure
@@ -70,10 +70,10 @@ First of all, you need to download data with the command :
 make data
 ```
 
-This will download official data in `./data`, containing two subfolders for infected and non-infected cells
+This will download official data in `./data`, containing two sub-folders for infected and non-infected cells
 as presented above.
 
-To train models, you need to run the command :
+To train a model, you need to run the command :
 
 ```bash
 make train
@@ -113,7 +113,7 @@ which form the classifier part.
 
 Each parameter can be modified in *config["model"]*. Especially, you can change the architecture
 of the convolution blocks. Moreover, *n_out_channels* is a list with the number of output channels for each
-convolutional block and *n_hidden_state* specifies the number of hidden units of the classifier part of the model.
+convolutional block and *n_hidden_neurons* specifies the number of hidden units of the classifier part of the model.
 
 
 ## Results
@@ -127,7 +127,7 @@ As the network is pre-trained, we achieve pretty good results even after 1 epoch
 
 
 By repeating the experimentation, we found models with test accuracy around 97%.
-Once the network is trained, analyze the results and in particular how the networks makes his predictions
+Once the network is trained, analyzing the results and in particular how the network makes his predictions
 is interesting. That's what we can do with the SHAP values. Below are particular cell images predictions
 explained (probabilities are rounded by 2 decimals) : 
 
